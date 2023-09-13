@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo AJAX</title>
+</head>
+<body>
+
+<p id="message">Clique no botão para ver a mensagem em JSON!</p>
+<button onclick="fetchJson()">Carregar JSON</button>
+
+<script>
+  function fetchJson() {
+    fetch('http://localhost:3000/get-json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('message').textContent = data.message;
+      });
+  }
+</script>
+
+</body>
+</html>
