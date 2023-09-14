@@ -1,22 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo AJAX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            padding: 10px;
+        }
+
+        h3 {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h2>Requisição de JSON</h2>
+    <h3 id="message">Clique no botão para ver a mensagem em JSON!</h3>
+    <button onclick="fetchJson()">Carregar JSON</button>
+    <br>
+    <h2>Envio de query</h2>
+    <h3>Envia dados atraves de queries na url e receba json com a informação fornecida. Exemplo: https://csi-26-atividade4.onrender.com/formdata?name=John&surname=Doe</h3>
+    <h2>Envie sua foto</h2>
+
+    <form action="https://csi-26-atividade4.onrender.com/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <h2>Recupere sua foto</h2>
+    <h3>Acesse: https://csi-26-atividade4.onrender.com/static/{nome da foto com extensão}</h3>
+
+    <script>
+        function fetchJson() {
+            fetch('https://csi-26-atividade4.onrender.com/get-json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').textContent = data.message;
+                });
+        }
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exemplo AJAX</title>
 </head>
 <body>
-
-<p id="message">Clique no botão para ver a mensagem em JSON!</p>
-<button onclick="fetchJson()">Carregar JSON</button>
-<br>
-<h2>Envie sua foto</h2>
+    <h2>Requisição de JSON</h2>
+    <h3 id="message">Clique no botão para ver a mensagem em JSON!</h3>
+    <button onclick="fetchJson()">Carregar JSON</button>
+    <br>
+    <h2>Envio de query</h2>
+    <h3>Envia dados atraves de queries na url e receba json com a informação fornecida. Exemplo: https://csi-26-atividade4.onrender.com/formdata?name=John&surname=Doe</h3>
+    <h2>Envie sua foto</h2>
 
     <form action="https://csi-26-atividade4.onrender.com/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" required>
-    <br><br>
-    <button type="submit">Enviar</button>
-</form>
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <h2>Recupere sua foto</h2>
+    <h3>Acesse: https://csi-26-atividade4.onrender.com/static/{nome da foto com extensão}</h3>
+
+    
 
 <script>
   function fetchJson() {
@@ -29,4 +114,4 @@
 </script>
 
 </body>
-</html>
+</html> -->
