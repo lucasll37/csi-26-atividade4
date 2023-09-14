@@ -11,9 +11,8 @@ destination: (req, file, cb) => {
     cb(null, 'static/');
 },
 filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-}
-});
+    cb(null, file.originalname);
+}});
 
 const app = express();
 
