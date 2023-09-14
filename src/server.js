@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const path = require('path');
+require('dotenv').config();
+
 
 const storage = multer.diskStorage({
 destination: (req, file, cb) => {
@@ -12,7 +14,6 @@ filename: (req, file, cb) => {
 }
 });
 
-const port = 3000;
 const app = express();
 
 app.use('/static', express.static(path.join(__dirname, '/static')));
@@ -42,7 +43,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "..", './public/index.html'));
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log(`Server running at http://${process.env.HOST}:${process.env.PORT}`);
 });
 
