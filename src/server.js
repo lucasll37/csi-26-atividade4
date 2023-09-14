@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
+const cors = require('cors');
 
 
 const storage = multer.diskStorage({
