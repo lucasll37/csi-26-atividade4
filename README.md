@@ -1,5 +1,3 @@
-﻿## csi-26-atividade4
-
 Utilizando Node e o módulo Express, desenvolva
 uma aplicação no servidor que atenda os seguintes
 requisitos:
