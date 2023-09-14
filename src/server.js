@@ -19,8 +19,7 @@ const app = express();
 
 app.use(cors());
 
-app.use('/static', express.static(path.join(__dirname, '/static')));
-
+app.use('/static', express.static(path.join(__dirname, '..', '/static')));
 
 const upload = multer({ storage: storage });
 

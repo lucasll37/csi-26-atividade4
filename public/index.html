@@ -9,6 +9,14 @@
 
 <p id="message">Clique no botão para ver a mensagem em JSON!</p>
 <button onclick="fetchJson()">Carregar JSON</button>
+<br>
+<h2>Envie sua foto</h2>
+
+<form action="https://csi-26-atividade4.onrender.com/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <br><br>
+    <button type="submit">Enviar</button>
+</form>
 
 <script>
   function fetchJson() {
