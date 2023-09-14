@@ -12,7 +12,7 @@
 
 <script>
   function fetchJson() {
-    fetch('http://localhost:3000/get-json')
+    fetch('https://csi-26-atividade4.onrender.com/get-json')
       .then(response => response.json())
       .then(data => {
         document.getElementById('message').textContent = data.message;
